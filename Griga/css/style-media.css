@@ -1,0 +1,109 @@
+nav .container {
+    padding: 0px 3.5vw;
+}
+
+.grid {
+    gap: 2.5vw;
+    padding: 75px 2.5vw;
+}
+
+.content {
+    padding: 75px 2.5vw;
+}
+
+.midtitular h1 {
+    font-size: 9vw;
+}
+
+.genero {
+    font-size: 2vw;
+}
+
+.div p {
+    font-size: 2.8vw;
+}
+
+@media(max-width: 992px) {
+    .texto, .texto p {
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 768px) {
+    nav .container {
+        min-height: 40px;
+        padding: 0px 6vw;
+    }
+    nav .searchform #searchtoggle {
+        display: block;
+    }
+    nav .searchform #searchsubmit {
+        display: none;
+    }
+    nav .searchform input {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5vw;
+        padding: 20vw 5vw;
+        padding-top: 0;
+        margin-top: -20vw;
+    }
+    .content {
+        padding: 20vw 5vw;
+        padding-top: 50px;
+    }
+    .grid>.half>div {
+        align-items: flex-start;
+    }
+    .grid>*:first-child>div {
+        align-items: flex-end;
+    }
+    .genero {
+        font-size: 4vw;
+    }
+    .div p {
+        font-size: 5.6vw;
+    }
+    .footer {
+        margin-top: 0;
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+    .texto, .texto p {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 576px) {
+    :root {
+        --radius: 15px;
+    }
+    nav ul a {
+        font-size: 15px;
+    }
+    nav .searchform input {
+        font-size: 12px;
+        height: 25px;
+        padding: 0px 10px;
+        max-width: 200px;
+    }
+    nav svg {
+        width: 20px;
+        height: 20px;
+    }
+    .grid {
+        margin-top: -10vw;
+    }
+    .div {
+        border-radius: var(--radius);
+    }
+    .texto, .texto p {
+        font-size: 15px;
+    }
+    .texto figure, .texto .wp-block-cover, .texto blockquote {
+        border-radius: var(--radius)!important;
+    }
+}

@@ -1,0 +1,15 @@
+.trigger {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.target, .target2 {
+    position: absolute;
+    z-index: 1;
+    padding: var(--container-padding);
+}

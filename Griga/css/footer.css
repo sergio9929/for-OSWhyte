@@ -1,0 +1,43 @@
+footer{
+    height: 200px;
+}
+
+footer p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer .iconos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+footer .circulo{
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 100%;
+    margin: 10px 5px;
+}
+
+
+@media(max-width: 576px){
+    footer{
+        height: 50vw;
+    }
+    
+    footer p{
+        font-size: 3vw;
+        margin-top: 5vw;
+    }
+    
+    .iconos>.circulo{
+       background: white;
+        margin: 3vw 1vw;
+        width: 5vw;
+        height: 5vw;
+    }
+}

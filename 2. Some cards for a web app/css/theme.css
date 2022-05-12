@@ -1,0 +1,14 @@
+:root {
+    --links: #1c22d5;
+    --correctos: #1c22d5;
+    --errores: #d11518;
+    --avisos: #cf9310;
+    --selection: #f0f014;
+    --titulo: #000000;
+    --textos: rgba(0, 0, 0, .7);
+    --bordes-hover: #c2c7f1;
+    --bordes: #e4e6f9;
+    --botones: #0039a6;
+    --fila: #f8f9fd;
+    --base: #ffffff;
+}

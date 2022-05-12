@@ -1,0 +1,82 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #333;
+    color: #fff;
+}
+
+body {
+    padding: 25px;
+}
+
+a {
+    color: #0AF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: .5em;
+}
+
+p, img {
+    margin-bottom: 1em;
+    border-radius: .5rem;
+}
+
+img {
+    width: 100%;
+    max-width: 1200px;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: .5em;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: .8rem;
+}
+
+h6 {
+    font-size: .5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.block {
+    margin-bottom: 5rem;
+}
+
+.live {
+    color: #0F1;
+}

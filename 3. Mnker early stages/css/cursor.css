@@ -1,0 +1,94 @@
+/* html, a, label, input, button {
+    cursor: none;
+} */
+
+html:hover #cursor{
+    visibility: visible;
+}
+
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    mix-blend-mode: difference;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursor--sobre-texto #cursor__pointer-inside {
+    border-radius: 0px;
+    width: 3px;
+    height: 23px;
+}
+
+#cursor__pointer {
+    position: absolute;
+    transition: transform .2s;
+}
+
+.cursor--sobre-link #cursor__pointer {
+    transform: scale(3);
+}
+
+.cursor--sobre-tarjeta #cursor__pointer {
+    transform: scale(6);
+}
+
+.cursor--sobre-boton #cursor__pointer {
+    transform: scale(2);
+}
+
+.cursor--sobre-texto #cursor__pointer-inside {
+    border-radius: 0px;
+}
+
+#cursor__pointer-inside {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    transition-property: border-radius, width, height;
+    transition-duration: .2s;
+}
+
+.cursor--sobre-tarjeta #cursor__pointer-inside, .cursor--sobre-link #cursor__pointer-inside {
+    animation: respiracion .5s infinite alternate forwards;
+}
+
+/* .cursor--sobre-tarjeta #cursor__pointer-inside::after {
+    content: "clic";
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    font-size: 5px;
+} */
+
+@keyframes respiracion {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* @media (max-width: 1200px) {
+    html {
+        cursor: auto;
+    }
+    a {
+        cursor: pointer;
+    }
+    #cursor {
+        display: none;
+    }
+
+    input, button, label{
+        cursor: pointer;
+    }
+} */

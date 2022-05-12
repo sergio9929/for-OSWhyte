@@ -1,0 +1,644 @@
+@font-face {
+    font-family: "aaa";
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "aaa";
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "aaa";
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 900;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "aaa", "Raleway", sans-serif;
+}
+
+:root {
+    --width: 1500px;
+    --color: white;
+    --color-fondo: black;
+    --radius: 20px;
+}
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color) var(--color-fondo);
+}
+
+/* Works on Chrome, Edge, and Safari */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+    background: var(--color-fondo);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color);
+    border: 1px solid var(--color-fondo);
+    /* border-radius: var(--radius); */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color);
+    box-shadow: inset 0px 0px 20px -10px var(--color-fondo);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    background: var(--color-fondo);
+    color: var(--color);
+    font-size: 15px;
+}
+
+.container {
+    max-width: var(--width);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+a {
+    color: var(--color);
+}
+
+/* INICIO DE NAV */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-fondo);
+    z-index: 10000;
+    /* box-shadow: 0px 0px 30px -10px var(--color-fondo); */
+}
+
+nav .container {
+    min-height: 50px;
+    padding: 0px calc(var(--width) / 100 * 3.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+}
+
+nav ul {
+    justify-content: flex-start;
+    display: flex;
+    list-style-type: none;
+    margin: 0px auto;
+    /* flex-wrap: wrap; */
+}
+
+nav ul a {
+    padding: 0px 15px;
+    height: 100%;
+    text-decoration: none;
+    color: var(--color);
+    font-size: 20px;
+    font-weight: 700;
+    transition: background-color .25s, color .25s;
+}
+
+nav ul li {
+    width: max-content;
+}
+
+nav ul a:hover, nav ul a:focus, nav ul>.current_page_item a, .current_page_parent a {
+    background: var(--color);
+    color: var(--color-fondo);
+    outline: none;
+}
+
+.current_page_item a, .current_page_parent a {
+    pointer-events: none;
+}
+
+nav .searchform {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* text-align: right; */
+    width: 100%;
+    max-width: 370px;
+}
+
+nav .searchform input {
+    padding: 0px 15px;
+    max-width: 300px;
+    font-size: 15px;
+    width: 100%;
+    min-width: 50px;
+    height: 30px;
+    background: var(--color-fondo);
+    margin-right: 15px;
+    margin-left: 15px;
+    color: var(--color);
+    outline: none;
+    border: 2px solid var(--color);
+    border-radius: var(--radius);
+    transition: background-color .25s, color .25s, opacity .25s, transform .25s;
+    opacity: .5;
+    transform: translateY(0px);
+}
+
+nav .searchform input::placeholder {
+    color: var(--color);
+    transition: color .25s;
+}
+
+nav .searchform input:hover::placeholder, nav .searchform input:focus::placeholder {
+    color: var(--color-fondo);
+}
+
+nav .searchform input.active {
+    transform: translateX(0px);
+    opacity: .5;
+}
+
+nav .searchform input:hover, nav .searchform input:focus {
+    /* background-color: var(--color); */
+    /* color: var(--color-fondo); */
+    opacity: 1;
+}
+
+nav .searchform .boton {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    line-height: 0;
+    border-radius: var(--radius);
+    margin: 0px 3px;
+    transition: transform .1s;
+}
+
+nav .searchform #searchtoggle {
+    display: none;
+}
+
+nav .searchform .boton:hover, nav .searchform .boton:focus {
+    transform: scale(1.2);
+}
+
+nav svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color);
+}
+
+/* FIN DE NAV */
+
+/* INICIO DE GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    gap: calc(var(--width) / 100 * 2.5);
+    padding: 75px calc(var(--width) / 100 * 2.5);
+}
+
+.content {
+    width: 100%;
+    padding: 75px calc(var(--width) / 100 * 2.5);
+}
+
+.grid>* {
+    position: relative;
+}
+
+.grid::before {
+    content: '';
+    width: 0;
+    padding-bottom: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+.grid>*:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+    cursor: default;
+}
+
+.midtitular {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titular {
+    height: auto;
+    margin-top: 60px;
+    text-transform: lowercase;
+}
+
+.midtitular h1 {
+    color: var(--color);
+    /* font-size: 9vw; */
+    font-size: calc(var(--width) / 100 * 9);
+    font-weight: 700;
+    text-align: center;
+    word-break: break-word;
+}
+
+.grid>.half {
+    grid-area: span 1 / span 1;
+    text-decoration: none;
+}
+
+.grid>.half.hover h1 {
+    transition: transform .25s;
+}
+
+.grid>.half.hover:hover h1, .grid>.half.hover:focus h1 {
+    transform: scale(1.2);
+}
+
+.grid>* {
+    grid-area: span 2 / span 2;
+}
+
+/* FIN DE GRID */
+
+/* INICIO DE DIV */
+
+/* es obligatorio que div sea relative */
+
+.div {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    overflow: hidden;
+    z-index: 1000;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: transform .25s, opacity 1s;
+}
+
+.div.hover:hover, .div.hover:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+
+.wrap {
+    padding: 5.5%;
+    padding-bottom: 6.5%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.genero {
+    background: var(--color);
+    color: var(--color-fondo);
+    height: 1.25em;
+    min-width: 37%;
+    width: max-content;
+    margin-bottom: 2.5%;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    font-size: calc(var(--width) / 100 * 2);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.div p {
+    color: var(--color);
+    font-size: calc(var(--width) / 100 * 2.8);
+    width: 87%;
+    max-height: 3.6em;
+    overflow: hidden;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* mascara de imagen de fondo */
+.crop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div.hover:hover .crop {
+    animation: rotate infinite 4s linear forwards;
+}
+
+.crop .gradiente {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    background: var(--color-fondo);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .05) 0%, rgba(0, 0, 0, .1) 30%, var(--color-fondo) 100%);
+    transition: opacity .25s;
+    opacity: .8;
+}
+
+.div.hover:hover .crop .gradiente {
+    opacity: .65;
+}
+
+.div.hover:hover .crop::after {
+    content: "";
+    transform: scale(.1);
+    border-radius: 50%;
+    background: black;
+    border: 2vw solid white;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    left: auto;
+    position: absolute;
+    animation: scale .25s;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(.15);
+        opacity: .5;
+    }
+
+    to {
+        transform: scale(.1);
+        opacity: 1;
+    }
+}
+
+/* imagen */
+.div img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+    aspect-ratio: 1;
+    transform: scale(1.03);
+    transition: transform .25s, border-radius .25s;
+}
+
+.div.hover:hover img {
+    transform: scale(.9);
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* FIN DE DIV */
+
+.texto, .texto p {
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.texto p {
+    width: 100%;
+    max-height: initial;
+    margin-bottom: 1.5rem;
+}
+
+.texto img, .texto video {
+    border-radius: var(--radius);
+    width: 100%;
+    height: auto;
+}
+
+.texto figure, .texto .wp-block-cover {
+    border-radius: var(--radius) !important;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    line-height: 0px;
+}
+
+.texto .wp-block-image figcaption, .texto .wp-block-video figcaption {
+    margin-top: .5rem;
+    margin-bottom: 0;
+    text-align: right;
+    padding-left: var(--radius);
+    padding-right: var(--radius);
+    font-size: .8em;
+    line-height: normal;
+    opacity: .7;
+}
+
+.texto .wp-block-cover p {
+    margin-bottom: 0;
+}
+
+.texto ul, .texto ol {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding-left: 1.3rem;
+}
+
+.wp-block-cover-image.has-background-dim:not([class*=-background-color]), .wp-block-cover.has-background-dim:not([class*=-background-color]) {
+    background-color: var(--color-fondo);
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container, .wp-block-cover .wp-block-cover__inner-container {
+    color: var(--color);
+}
+
+.texto blockquote {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.texto blockquote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: var(--radius);
+    border: 1px solid var(--color);
+    opacity: .5;
+    z-index: -1;
+}
+
+.texto blockquote cite {
+    font-size: .8em;
+    opacity: .7;
+}
+
+.texto .wp-block-gallery {
+    margin-bottom: 0px;
+}
+
+.texto .wp-block-gallery .blocks-gallery-grid {
+    margin-bottom: .5rem;
+    padding-left: 0px;
+}
+
+.texto .wp-block-embed .wp-block-embed__wrapper {
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.texto .wp-block-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.texto h1, .texto h2, .texto h3, .texto h4, .texto h5, .texto h6 {
+    margin-bottom: 1.5rem;
+}
+
+.texto h1 {
+    font-size: 3em;
+}
+
+.texto h2 {
+    font-size: 2em;
+}
+
+.texto h3 {
+    font-size: 1.5em;
+}
+
+.texto h4 {
+    font-size: 1em;
+}
+
+.categorias {
+    list-style-type: none;
+    padding-left: 0 !important;
+}
+
+.categorias>li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.categorias a {
+    padding: 0px 15px;
+    text-decoration: none;
+    color: var(--color);
+    font-weight: 700;
+    border: 1px solid var(--color);
+    transition: background-color .25s, color .25s;
+}
+
+.categorias a:hover, .categorias a:focus {
+    background: var(--color);
+    color: var(--color-fondo);
+    outline: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form input[type="text"], .form textarea {
+    padding: 5px 15px;
+    font-size: inherit;
+    width: 100%;
+    background: var(--color-fondo);
+    color: var(--color);
+    outline: none;
+    border: 2px solid var(--color);
+    border-radius: 5px;
+    transition: background-color .25s, color .25s, opacity .25s;
+    opacity: .5;
+    resize: none;
+}
+
+.form textarea {
+    height: 90px;
+}
+
+.form input::placeholder, .form textarea::placeholder {
+    color: var(--color);
+    transition: color .25s;
+}
+
+.form input:hover::placeholder, .form input:focus::placeholder, .form textarea:hover::placeholder, .form textarea:focus::placeholder {
+    color: var(--color-fondo);
+}
+
+.form input:hover, .form input:focus, .form textarea:hover, .form textarea:focus {
+    /* background-color: var(--color); */
+    /* color: var(--color-fondo); */
+    opacity: 1;
+}
+
+.form label {
+    padding-bottom: 10px;
+}
+
+.form input[type="submit"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px 15px;
+    border: 1px solid var(--color);
+    border-radius: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-weight: 700;
+    transition: background-color .25s, color .25s;
+}
+
+.form input[type="submit"]:hover, .form input[type="submit"]:focus {
+    background-color: var(--color);
+    color: var(--color-fondo);
+}
+
+.footer {
+    margin-top: 75px;
+    text-align: center;
+}

@@ -1,0 +1,111 @@
+.deck {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+    gap: var(--gap);
+    transition-property: padding, gap;
+    transition-duration: .25s;
+}
+
+.card {
+    /* overflow: hidden; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 35px 50px;
+    border: 1px solid var(--bordes);
+    border-radius: 25px;
+    background-color: var(--fila);
+    transition-property: border-color, transform, padding;
+    transition-duration: .25s;
+}
+
+.card:hover, .card:focus {
+    transform: translateY(-10px);
+    /* transform: scale(1.05); */
+    border-color: var(--links);
+    z-index: 1;
+}
+
+.card.compact.compacted .card-links {
+    display: none;
+}
+
+/* .card:hover .material-icons.black, .card:hover h1, .card:focus .material-icons.black, .card:focus h1{
+    color: var(--links);
+} */
+
+.card .material-icons.black {
+    font-size: 66px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+.card h1 {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                          supported by Chrome and Opera */
+}
+
+.card h1, .material-icons.black {
+    pointer-events: none;
+}
+
+.card .card-links {
+    list-style-type: none;
+    width: 100%;
+}
+
+.card .card-links>li {
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    height: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+/* cajas de carga */
+
+.loading .black {
+    background-color: var(--bordes-hover);
+    color: transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.loading .material-icons.black {
+    background-color: var(--bordes-hover);
+    /* overflow: hidden; */
+    display: block;
+    width: 66px;
+    height: 66px;
+}
+
+/* cajas de carga */
+
+@media(max-width: 768px) {
+    .card {
+        max-width: 100%;
+        padding: 20px 25px 50px;
+    }
+}
+
+@media(max-width: 576px) {
+    .deck {
+        grid-template-columns: 1fr;
+    }
+}

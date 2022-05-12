@@ -1,0 +1,171 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --border-width: 1px;
+    --border-radius: 15px;
+    --container-width: 1500px;
+    --container-padding: 50px;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: black;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    inset-inline: 0;
+    z-index: 1000;
+    height: 75px;
+    margin: auto;
+    border-bottom: var(--border-width) solid black;
+    background-color: white;
+}
+
+.nav__container {
+    max-width: var(--container-width);
+    margin: auto;
+    padding: 20px var(--container-padding);
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+progress {
+    position: fixed;
+    z-index: 1001;
+    top: 70px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border: none;
+    background: transparent;
+}
+
+progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+progress::-webkit-progress-value {
+    background-color: black;
+}
+
+progress::-moz-progress-bar {
+    background-color: black;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: auto;
+    padding: var(--container-padding);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-auto-rows: minmax(300px, 1fr);
+    grid-auto-flow: dense;
+    background-color: black;
+    gap: var(--border-width);
+    border: var(--border-width) solid black;
+    counter-reset: grid;
+}
+
+.grid__item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    position: relative;
+}
+
+.grid__item[data-size="3/1"] {
+    content: attr(data-size);
+    grid-column: 1 / 4;
+}
+
+.grid__item[data-size="1/3"] {
+    content: attr(data-size);
+    grid-row: span 3;
+}
+
+.grid__item[data-size="3"], .grid__item[data-size="3/3"] {
+    content: attr(data-size);
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+.grid__item[data-size="2/1"] {
+    content: attr(data-size);
+    grid-column: span 2;
+}
+
+.grid__item[data-size="1/2"] {
+    content: attr(data-size);
+    grid-row: span 2;
+}
+
+.grid__item[data-size="2"], .grid__item[data-size="2/2"] {
+    content: attr(data-size);
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.grid__item[data-size="1"], .grid__item[data-size="1/1"] {
+    grid-column: auto;
+    aspect-ratio: 1;
+}
+
+.grid__item-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.grid__item-title--big {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.grid__item::after {
+    content: counter(grid);
+    counter-increment: grid;
+    text-align: right;
+    font-size: 1.5rem;
+    line-height: 1;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    width: fit-content;
+    pointer-events: none;
+}
+
+.footer {
+    max-width: var(--container-width);
+    margin: auto;
+    padding: var(--container-padding);
+}
+
+.footer__link {}
+
+.footer__image {
+    display: block;
+    width: 200px;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll snap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gap: 30px;
+            --margin: 200px;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-left: var(--margin);
+        }
+
+        .slider {
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            /* scroll-behavior: smooth; */
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider-content {
+            display: flex;
+            padding-block: 20px;
+            width: max-content;
+            padding-right: 100vw;
+        }
+
+        .slider .card-container {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            width: 400px;
+            height: 500px;
+            padding-right: var(--gap);
+            pointer-events: none;
+        }
+        .slider .card-container .animation{
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider .card-container .card {
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+            transition: box-shadow, transform;
+            transition-duration: .25s;
+            padding: var(--gap);
+            font-size: x-large;
+            text-align: right;
+            overflow: hidden;
+            position: relative;
+            left: var(--margin);
+            pointer-events: auto;
+        }
+
+        .slider .card-container .card:hover,
+        .slider .card-container .card:focus {
+            box-shadow: 2px 4px 12px rgb(0 0 0 / 16%), 0px 0px 0px 5px blue;
+            transform: scale(1.02);
+            outline: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>scroll inside a card →</h1>
+    <div class="slider">
+        <div class="slider-content">
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">01</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">02</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">03</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">04</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">05</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">06</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">07</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">08</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">09</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">10</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">11</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">12</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">13</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">14</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">15</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">16</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">17</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">18</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">19</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">20</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>scroll inside a card →</h1>
+    <div class="slider">
+        <div class="slider-content">
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">01</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">02</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">03</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">04</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">05</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">06</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">07</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">08</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">09</div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="animation">
+                    <div class="card">10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="anime.min.js"></script>
+    <script>
+        const throttle = (fn, delay) => {
+            console.log("throttling", fn, delay)
+            let time = 0;
+            return (...args) => {
+                const now = new Date().getTime();
+                if (now - time < delay) {
+                    return;
+                }
+                time = now;
+                return fn(...args)
+            }
+        }
+
+        let hola = throttle((e, element) => {
+            element.scrollBy({ left: Math.sign(e.deltaY) * 402, behavior: "smooth" });
+            console.log(element.scrollLeft)
+        }, 500)
+
+        let delay = 200;
+        anime({
+            targets: ".slider",
+            translateY: [-80, 0],
+            duration: 1000,
+            easing: 'spring(1,80,10,0)',
+            delay: anime.stagger(delay),
+        });
+        document.querySelectorAll(".slider").forEach((element, index) => {
+            console.log(Array.from(element.children[0].children))
+            anime({
+                targets: element.querySelectorAll(".animation"),
+                translateY: [-80, 0],
+                opacity: [0, 1],
+                duration: 1000,
+                easing: 'spring(1,80,10,0)',
+                delay: (el, i, l) => {
+                    return i * anime.random(1, 500) + index * delay;
+                },
+                // delay: anime.stagger(300, {start: index*delay, easing: 'easeOutQuad'})
+            });
+            element.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                hola(e, element)
+            })
+        });
+    </script>
+</body>
+
+</html>

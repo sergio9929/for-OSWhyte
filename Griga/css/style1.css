@@ -1,0 +1,247 @@
+@font-face {
+    font-family: "aaa";
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "aaa";
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "aaa";
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 900;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "aaa", "Raleway", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    background: black;
+    color: white;
+}
+
+
+/* INICIO DE GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2.5vw;
+    padding: 75px 2.5vw;
+}
+
+.grid>* {
+    background: var(--dark2);
+    position: relative;
+}
+
+.grid::before {
+    content: '';
+    width: 0;
+    padding-bottom: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+.grid>*:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+    cursor: default;
+}
+
+.titular{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid>*:last-child>.div{
+    width: 100%;
+    height: 100%;
+}
+
+.titular h1{
+    color: white;
+    font-size: 9vw;
+    font-weight: 700;
+    text-align: center;
+}
+
+.grid>*:last-child{
+  grid-area: span 1 / span 2;
+  text-decoration: none;
+  
+}
+
+.grid>*{
+    grid-area: span 2 / span 2;
+}
+/* FIN DE GRID */
+
+
+/* INICIO DE DIV */
+/* es obligatorio que div sea relative */
+.div {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    overflow: hidden;
+    z-index: 1000;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: transform .25s, border-radius .25s;
+}
+
+.div.hover:hover{
+    transform: scale(1.05);
+    border-radius: 20px;
+}
+
+.wrap {
+    padding: 2.5vw;
+    padding-bottom: 3vw;
+    overflow: hidden;
+    position: absolute;
+}
+
+.div.hover:hover{
+    transform: scale(1.05);
+    border-radius: 20px;
+}
+
+.genero {
+    background: white;
+    color: black;
+    height: 2.5vw;
+    width: 15vw;
+    margin-bottom: 1vw;
+    display: flex;
+    align-items: center;
+    padding-left: 1.2vw;
+    font-size: 2vw;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.div p {
+    color: white;
+    font-size: 2.8vw;
+    width: 35vw;
+    max-height: 10vw;
+    overflow: hidden;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* mascara de imagen de fondo */
+.crop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1000;
+    overflow: hidden;
+    transition: border-radius .25s;
+}
+
+.div.hover:hover .crop{
+    border-radius: 50%;
+}
+
+.crop .gradiente {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    transform: scale(2);
+    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .07) 40%, rgba(0, 0, 0, 1) 100%);
+    transition: opacity .25s;
+}
+
+/* imagen */
+.div img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+    transform: scale(1.03);
+    transition: transform .25s;
+}
+
+.div.hover:hover img {
+    transform: scale(1);
+}
+.div.hover:hover .crop .gradiente{
+    opacity: .7;
+}
+/* FIN DE DIV */
+
+@media(max-width: 768px){
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5vw;
+        padding: 20vw 5vw;
+        padding-top: 0;
+        margin-top: -20vw;
+    }
+
+    .grid>*:last-child>div{
+        align-items: flex-start;
+    }
+
+    .grid>*:first-child>div{
+        align-items: flex-end;
+    }
+
+    /* INICIO DE DIV */
+    .div {
+        border-radius: 10px;
+    }
+
+    .wrap {
+        padding: 5vw;
+        padding-bottom: 6vw;
+    }
+
+    .genero {
+        height: 5vw;
+        width: 30vw;
+        margin-bottom: 2vw;
+        padding-left: 2.4vw;
+        font-size: 4vw;
+    }
+
+    .div p {
+        font-size: 5.6vw;
+        width: 70vw;
+        max-height: 20.2vw;
+    }
+    /* FIN DE DIV */
+}
+
+
+@media(max-width: 576px){
+    .grid {
+        margin-top: -10vw;
+    }
+}

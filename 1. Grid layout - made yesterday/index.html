@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid moderno</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scrollTrigger.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <nav class="nav"><div class="nav__container"><p>When I visit a website with something I really liked, I feel the need to try and make it on my own.</p></div></nav>
+    <progress max="100" value="0"></progress>
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item" data-size="3/1">
+                <h3 class="grid__item-title grid__item-title--big">Lorem<br> Ipsum dolor</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="2/1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="2">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="3">
+                <h3 class="grid__item-title grid__item-title--big">Lorem<br> Ipsum dolor</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+        </div>
+
+        <div class="trigger">
+            <h1 class="grid__item-title--big target">Lorem Ipsum</h1>
+            <p class="grid__item-title target2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus cum quos, tempore dolore aliquid veritatis eius harum reiciendis voluptate veniam quasi modi. Officiis tempore aut similique commodi impedit obcaecati repudiandae.</p>
+        </div>
+
+        <div class="grid">
+            <div class="grid__item" data-size="3/1">
+                <h3 class="grid__item-title grid__item-title--big">Lorem<br> Ipsum dolor</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="2/1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+            <div class="grid__item" data-size="1">
+                <h3 class="grid__item-title">Possimus, eaque.</h3>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <a href="https://dribbble.com/shots/18163937-Blitz-Website" target="_blank" class="footer__link">Reference</a>
+        <img src="https://cdn.dribbble.com/userupload/2669608/file/original-a7c98dca8e2f1b21f7a7730119dc792a.png" alt="" class="footer__image">
+    </footer>
+</body>
+</html>
